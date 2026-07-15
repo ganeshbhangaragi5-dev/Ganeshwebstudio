@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ganesh — Professional Web Developer & Digital Marketer</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Ganesh builds professional, high-converting websites with SEO, digital marketing, and Google Business Profile optimization. Get a free quote today." />
+    <meta name="keywords" content="web development, SEO, digital marketing, Google Business Profile, website design, Ganesh" />
+    <meta name="author" content="Ganesh" />
+    <link rel="canonical" href="https://ganeshweb.dev" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ganeshweb.dev" />
+    <meta property="og:title" content="Ganesh — Professional Web Developer & Digital Marketer" />
+    <meta property="og:description" content="I build beautiful, high-converting websites that help businesses get more customers." />
+    <meta property="og:image" content="https://placehold.co/1200x630/0F172A/2563EB?text=Ganesh+Web" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://ganeshweb.dev" />
+    <meta name="twitter:title" content="Ganesh — Professional Web Developer & Digital Marketer" />
+    <meta name="twitter:description" content="I build beautiful, high-converting websites that help businesses get more customers." />
+    <meta name="twitter:image" content="https://placehold.co/1200x630/0F172A/2563EB?text=Ganesh+Web" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "Ganesh Web Development",
+            "description": "Professional web development, SEO, digital marketing, and Google Business Profile optimization.",
+            "url": "https://ganeshweb.dev",
+            "telephone": "+91-9876543210",
+            "email": "ganesh@ganeshweb.dev",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "India"
+            },
+            "priceRange": "$$"
+        }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+
+    <!-- Font Awesome 6 (Free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ============================================================
+    LOADING ANIMATION
+    ============================================================ -->
+    <div id="loader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-[#0F172A] transition-opacity duration-700">
+        <div class="flex flex-col items-center">
+            <div class="loader-spinner w-16 h-16 border-4 border-[#2563EB] border-t-transparent rounded-full animate-spin"></div>
+            <p class="mt-4 text-white text-sm font-medium tracking-wider">LOADING...</p>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    SCROLL PROGRESS BAR
+    ============================================================ -->
+    <div id="progress-bar" class="fixed top-0 left-0 z-50 h-1 bg-gradient-to-r from-[#2563EB] to-[#38BDF8] transition-all duration-200" style="width:0%;"></div>
+
+    <!-- ============================================================
+    STICKY NAVBAR
+    ============================================================ -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-500 bg-[#0F172A]/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 text-xl font-bold text-white group">
+                    <span class="text-2xl">🚀</span>
+                    <span>Ganesh</span>
+                    <span class="text-[#2563EB]">.</span>
+                    <span class="text-xs font-normal text-[#94A3B8] hidden sm:inline">web</span>
+                </a>
+
+                <!-- Nav Links (Desktop) -->
+                <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-[#94A3B8]">
+                    <a href="#about" class="hover:text-white transition-colors">About</a>
+                    <a href="#services" class="hover:text-white transition-colors">Services</a>
+                    <a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a>
+                    <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+                    <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                </nav>
+
+                <!-- Right side: Dark mode toggle + CTA -->
+                <div class="flex items-center gap-3">
+                    <button id="dark-toggle" class="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 text-[#94A3B8] hover:text-white transition-all flex items-center justify-center text-sm">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="#contact" class="hidden sm:inline-block px-5 py-2 bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold rounded-full transition-all shadow-lg shadow-[#2563EB]/25 hover:shadow-[#2563EB]/40">
+                        Get Free Quote
+                    </a>
+                    <!-- Mobile hamburger -->
+                    <button id="menu-btn" class="lg:hidden w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 text-white transition-all flex items-center justify-center">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden flex-col items-center gap-4 py-6 border-t border-white/5 text-sm font-medium text-[#94A3B8]">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a>
+                <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                <a href="#contact" class="mt-2 px-6 py-2 bg-[#2563EB] text-white text-sm font-semibold rounded-full">Get Free Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    HERO SECTION
+    ============================================================ -->
+    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden pt-20 bg-[#0F172A]">
+        <!-- Animated background gradients -->
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute top-[-30%] left-[-10%] w-[70%] h-[70%] bg-[#2563EB]/10 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-[#38BDF8]/10 rounded-full blur-3xl animate-float-delayed"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#2563EB]/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left -->
+                <div data-aos="fade-up" data-aos-duration="800">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#2563EB]/20 border border-[#2563EB]/30 rounded-full text-[#38BDF8] text-xs font-medium tracking-wider mb-6">
+                        <span class="w-2 h-2 bg-[#38BDF8] rounded-full animate-pulse"></span>
+                        Available for projects
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] tracking-tight">
+                        Professional Websites
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#38BDF8]"> That Grow</span>
+                        Your Business
+                    </h1>
+                    <p class="mt-6 text-lg sm:text-xl text-[#94A3B8] max-w-lg leading-relaxed">
+                        I build beautiful, high-converting websites that help businesses get more customers.
+                    </p>
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <a href="#portfolio" class="px-8 py-3.5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-semibold rounded-full transition-all shadow-xl shadow-[#2563EB]/30 hover:shadow-[#2563EB]/50 flex items-center gap-2">
+                            View Portfolio <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="#contact" class="px-8 py-3.5 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-full transition-all border border-white/10 backdrop-blur-sm flex items-center gap-2">
+                            Get Free Quote <i class="fas fa-comment text-sm"></i>
+                        </a>
+                    </div>
+                    <!-- Stats -->
+                    <div class="mt-12 flex flex-wrap gap-8">
+                        <div>
+                            <div class="text-2xl font-bold text-white"><span class="counter" data-target="120">0</span>+</div>
+                            <div class="text-sm text-[#94A3B8]">Projects Delivered</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white"><span class="counter" data-target="98">0</span>%</div>
+                            <div class="text-sm text-[#94A3B8]">Client Satisfaction</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white"><span class="counter" data-target="4">0</span>+</div>
+                            <div class="text-sm text-[#94A3B8]">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Hero visual -->
+                <div data-aos="fade-up" data-aos-delay="200" class="relative flex justify-center">
+                    <div class="relative w-full max-w-md aspect-square">
+                        <!-- Glowing ring -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-r from-[#2563EB]/30 to-[#38BDF8]/30 blur-2xl animate-pulse"></div>
+                        <!-- Card mockup -->
+                        <div class="relative z-10 w-full h-full rounded-2xl bg-[#1E293B]/80 backdrop-blur-xl border border-white/10 p-6 shadow-2xl flex flex-col items-center justify-center">
+                            <div class="text-7xl mb-4">💻</div>
+                            <h3 class="text-xl font-bold text-white">Ganesh</h3>
+                            <p class="text-[#94A3B8] text-sm">Web Developer &amp; Digital Marketer</p>
+                            <div class="mt-4 flex gap-3">
+                                <span class="px-3 py-1 bg-[#2563EB]/20 text-[#38BDF8] text-xs rounded-full">SEO</span>
+                                <span class="px-3 py-1 bg-[#2563EB]/20 text-[#38BDF8] text-xs rounded-full">GBP</span>
+                                <span class="px-3 py-1 bg-[#2563EB]/20 text-[#38BDF8] text-xs rounded-full">Design</span>
+                            </div>
+                            <div class="mt-6 w-full h-2 bg-[#1E293B] rounded-full overflow-hidden">
+                                <div class="h-full w-3/4 bg-gradient-to-r from-[#2563EB] to-[#38BDF8] rounded-full"></div>
+                            </div>
+                            <div class="mt-2 w-full flex justify-between text-xs text-[#64748B]">
+                                <span>Skill level</span>
+                                <span>95%</span>
+                            </div>
+                        </div>
+                        <!-- Floating badges -->
+                        <div class="absolute -top-4 -right-4 z-20 bg-[#1E293B]/90 backdrop-blur-xl border border-white/10 rounded-xl px-4 py-2 shadow-lg animate-float">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <span class="text-white font-semibold text-sm">4.9/5</span>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 z-20 bg-[#1E293B]/90 backdrop-blur-xl border border-white/10 rounded-xl px-4 py-2 shadow-lg animate-float-delayed">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-rocket text-[#38BDF8] text-sm"></i>
+                                <span class="text-white font-semibold text-sm">Fast Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#64748B] animate-bounce">
+            <span class="text-xs tracking-widest uppercase">Scroll</span>
+            <i class="fas fa-chevron-down text-sm"></i>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    ABOUT ME
+    ============================================================ -->
+    <section id="about" class="py-20 md:py-28 bg-[#0F172A] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-[#38BDF8] text-sm font-semibold tracking-widest uppercase">About Me</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Who I Am</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-[#2563EB] to-[#38BDF8] mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Photo placeholder -->
+                <div data-aos="fade-right" class="relative flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-2 border-[#2563EB]/30 shadow-2xl shadow-[#2563EB]/20">
+                        <img src="https://placehold.co/400x400/1E293B/2563EB?text=Ganesh" alt="Ganesh - Web Developer" class="w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between text-white">
+                            <span class="text-sm font-medium">🚀 Ganesh</span>
+                            <span class="text-xs bg-[#2563EB]/80 px-3 py-1 rounded-full">Web Dev</span>
+                        </div>
+                    </div>
+                    <!-- Floating badge -->
+                    <div class="absolute -bottom-4 -right-4 bg-[#1E293B] border border-white/10 rounded-xl px-4 py-2 shadow-lg">
+                        <span class="text-[#38BDF8] font-bold text-sm">5+ Years</span>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-bold text-white">I'm Ganesh, a Web Developer &amp; Digital Marketer</h3>
+                    <p class="mt-4 text-[#94A3B8] leading-relaxed">
+                        I create professional websites that not only look stunning but also drive real business growth. With expertise in SEO, digital marketing, and Google Business Profile optimization, I help businesses get found online and convert visitors into customers.
+                    </p>
+                    <div class="mt-6 grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <span class="text-[#38BDF8] font-bold">Experience</span>
+                            <p class="text-[#94A3B8] text-sm">5+ years in web development &amp; digital marketing</p>
+                        </div>
+                        <div>
+                            <span class="text-[#38BDF8] font-bold">Mission</span>
+                            <p class="text-[#94A3B8] text-sm">To help businesses grow through powerful online presence</p>
+                        </div>
+                    </div>
+
+                    <!-- Skills tags -->
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <span class="px-4 py-2 bg-[#1E293B] border border-white/5 rounded-full text-sm text-[#94A3B8] hover:border-[#2563EB]/50 transition-colors">HTML5</span>
+                        <span class="px-4 py-2 bg-[#1E293B] border border-white/5 rounded-full text-sm text-[#94A3B8] hover:border-[#2563EB]/50 transition-colors">CSS3</span>
+                        <span class="px-4 py-2 bg-[#1E293B] border border-white/5 rounded-full text-sm text-[#94A3B8] hover:border-[#2563EB]/50 transition-colors">JavaScript</span>
+                        <span class="px-4 py-2 bg-[#1E293B] border border-white/5 rounded-full text-sm text-[#94A3B8] hover:border-[#2563EB]/50 transition-colors">React</span>
+                        <span class="px-4 py-2 bg-[#1E293B] border border-white/5 rounded-full text-sm text-[#94A3B8] hover:border-[#2563EB]/50 transition-colors">SEO</span>
+                        <span class="px-4 py-2 bg-[#1E293B] border border-white/5 rounded-full text-sm text-[#94A3B8] hover:border-[#2563EB]/50 transition-colors">Digital Marketing</span>
+                        <span class="px-4 py-2 bg-[#1E293B] border border-white/5 rounded-full text-sm text-[#94A3B8] hover:border-[#2563EB]/50 transition-colors">GBP</span>
+                        <span class="px-4 py-2 bg-[#1E293B] border border-white/5 rounded-full text-sm text-[#94A3B8] hover:border-[#2563EB]/50 transition-colors">Tailwind</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    SERVICES
+    ============================================================ -->
+    <section id="services" class="py-20 md:py-28 bg-[#0F172A] relative">
+        <!-- Background glow -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[40%] bg-[#2563EB]/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-[#38BDF8] text-sm font-semibold tracking-widest uppercase">Services</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">What I Offer</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-[#2563EB] to-[#38BDF8] mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-[#94A3B8] max-w-2xl mx-auto">End-to-end solutions to build, grow, and maintain your online presence.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div data-aos="fade-up" data-aos-delay="0" class="service-card group relative p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#2563EB]/10">
+                    <div class="w-12 h-12 rounded-xl bg-[#2563EB]/20 flex items-center justify-center text-[#38BDF8] text-xl group-hover:scale-110 transition-transform">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h4 class="mt-4 text-lg font-semibold text-white">Website Design</h4>
+                    <p class="mt-2 text-sm text-[#94A3B8] leading-relaxed">Modern, responsive, and user-friendly designs tailored to your brand.</p>
+                </div>
+                <!-- Card 2 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="service-card group relative p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#2563EB]/10">
+                    <div class="w-12 h-12 rounded-xl bg-[#2563EB]/20 flex items-center justify-center text-[#38BDF8] text-xl group-hover:scale-110 transition-transform">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4 class="mt-4 text-lg font-semibold text-white">Landing Pages</h4>
+                    <p class="mt-2 text-sm text-[#94A3B8] leading-relaxed">High-converting landing pages designed to capture leads and drive sales.</p>
+                </div>
+                <!-- Card 3 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="service-card group relative p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#2563EB]/10">
+                    <div class="w-12 h-12 rounded-xl bg-[#2563EB]/20 flex items-center justify-center text-[#38BDF8] text-xl group-hover:scale-110 transition-transform">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h4 class="mt-4 text-lg font-semibold text-white">Business Websites</h4>
+                    <p class="mt-2 text-sm text-[#94A3B8] leading-relaxed">Complete business websites with all the features you need to succeed online.</p>
+                </div>
+                <!-- Card 4 -->
+                <div data-aos="fade-up" data-aos-delay="300" class="service-card group relative p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#2563EB]/10">
+                    <div class="w-12 h-12 rounded-xl bg-[#2563EB]/20 flex items-center justify-center text-[#38BDF8] text-xl group-hover:scale-110 transition-transform">
+                        <i class="fas fa-magnifying-glass-chart"></i>
+                    </div>
+                    <h4 class="mt-4 text-lg font-semibold text-white">SEO Optimization</h4>
+                    <p class="mt-2 text-sm text-[#94A3B8] leading-relaxed">On-page and off-page SEO to rank higher on Google and drive organic traffic.</p>
+                </div>
+                <!-- Card 5 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="service-card group relative p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#2563EB]/10">
+                    <div class="w-12 h-12 rounded-xl bg-[#2563EB]/20 flex items-center justify-center text-[#38BDF8] text-xl group-hover:scale-110 transition-transform">
+                        <i class="fas fa-map-pin"></i>
+                    </div>
+                    <h4 class="mt-4 text-lg font-semibold text-white">Google Business Profile</h4>
+                    <p class="mt-2 text-sm text-[#94A3B8] leading-relaxed">Optimize your GBP to attract local customers and improve visibility.</p>
+                </div>
+                <!-- Card 6 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="service-card group relative p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#2563EB]/10">
+                    <div class="w-12 h-12 rounded-xl bg-[#2563EB]/20 flex items-center justify-center text-[#38BDF8] text-xl group-hover:scale-110 transition-transform">
+                        <i class="fas fa-gauge-high"></i>
+                    </div>
+                    <h4 class="mt-4 text-lg font-semibold text-white">Speed Optimization</h4>
+                    <p class="mt-2 text-sm text-[#94A3B8] leading-relaxed">Lightning-fast load times to improve user experience and SEO rankings.</p>
+                </div>
+                <!-- Card 7 -->
+                <div data-aos="fade-up" data-aos-delay="300" class="service-card group relative p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#2563EB]/10">
+                    <div class="w-12 h-12 rounded-xl bg-[#2563EB]/20 flex items-center justify-center text-[#38BDF8] text-xl group-hover:scale-110 transition-transform">
+                        <i class="fas fa-arrows-rotate"></i>
+                    </div>
+                    <h4 class="mt-4 text-lg font-semibold text-white">Website Redesign</h4>
+                    <p class="mt-2 text-sm text-[#94A3B8] leading-relaxed">Modern redesigns that breathe new life into outdated websites.</p>
+                </div>
+                <!-- Card 8 -->
+                <div data-aos="fade-up" data-aos-delay="400" class="service-card group relative p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#2563EB]/10">
+                    <div class="w-12 h-12 rounded-xl bg-[#2563EB]/20 flex items-center justify-center text-[#38BDF8] text-xl group-hover:scale-110 transition-transform">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h4 class="mt-4 text-lg font-semibold text-white">Maintenance</h4>
+                    <p class="mt-2 text-sm text-[#94A3B8] leading-relaxed">Ongoing support, updates, and security to keep your site running smoothly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    PORTFOLIO
+    ============================================================ -->
+    <section id="portfolio" class="py-20 md:py-28 bg-[#0F172A] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-[#38BDF8] text-sm font-semibold tracking-widest uppercase">Portfolio</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">My Recent Work</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-[#2563EB] to-[#38BDF8] mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div data-aos="fade-up" class="flex flex-wrap justify-center gap-2 mb-10">
+                <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-[#2563EB] text-white transition-all" data-filter="all">All</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-[#1E293B] text-[#94A3B8] hover:bg-[#2563EB]/20 hover:text-white transition-all" data-filter="business">Business</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-[#1E293B] text-[#94A3B8] hover:bg-[#2563EB]/20 hover:text-white transition-all" data-filter="restaurant">Restaurant</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-[#1E293B] text-[#94A3B8] hover:bg-[#2563EB]/20 hover:text-white transition-all" data-filter="hotel">Hotel</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-[#1E293B] text-[#94A3B8] hover:bg-[#2563EB]/20 hover:text-white transition-all" data-filter="construction">Construction</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-[#1E293B] text-[#94A3B8] hover:bg-[#2563EB]/20 hover:text-white transition-all" data-filter="healthcare">Healthcare</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-[#1E293B] text-[#94A3B8] hover:bg-[#2563EB]/20 hover:text-white transition-all" data-filter="education">Education</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
+                <!-- Item 1 - Business -->
+                <div data-aos="fade-up" data-aos-delay="0" class="portfolio-item group relative rounded-2xl overflow-hidden bg-[#1E293B] border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300" data-category="business">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1E293B/2563EB?text=Business+Pro" alt="Business Pro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-3 left-3 px-3 py-1 bg-[#2563EB]/80 text-white text-xs font-semibold rounded-full">Business</div>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-semibold text-white">Business Pro</h4>
+                        <p class="text-sm text-[#94A3B8] mt-1">Complete business website with CRM integration.</p>
+                        <div class="flex gap-3 mt-4">
+                            <a href="#" class="text-xs text-[#38BDF8] hover:text-white transition-colors">Live Demo <i class="fas fa-arrow-right ml-1"></i></a>
+                            <a href="#" class="text-xs text-[#94A3B8] hover:text-white transition-colors"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 - Restaurant -->
+                <div data-aos="fade-up" data-aos-delay="100" class="portfolio-item group relative rounded-2xl overflow-hidden bg-[#1E293B] border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300" data-category="restaurant">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1E293B/2563EB?text=Restaurant+Delight" alt="Restaurant Delight" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-3 left-3 px-3 py-1 bg-[#2563EB]/80 text-white text-xs font-semibold rounded-full">Restaurant</div>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-semibold text-white">Restaurant Delight</h4>
+                        <p class="text-sm text-[#94A3B8] mt-1">Menu ordering system with table reservations.</p>
+                        <div class="flex gap-3 mt-4">
+                            <a href="#" class="text-xs text-[#38BDF8] hover:text-white transition-colors">Live Demo <i class="fas fa-arrow-right ml-1"></i></a>
+                            <a href="#" class="text-xs text-[#94A3B8] hover:text-white transition-colors"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 - Hotel -->
+                <div data-aos="fade-up" data-aos-delay="200" class="portfolio-item group relative rounded-2xl overflow-hidden bg-[#1E293B] border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300" data-category="hotel">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1E293B/2563EB?text=Hotel+Grand" alt="Hotel Grand" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-3 left-3 px-3 py-1 bg-[#2563EB]/80 text-white text-xs font-semibold rounded-full">Hotel</div>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-semibold text-white">Hotel Grand</h4>
+                        <p class="text-sm text-[#94A3B8] mt-1">Booking platform with room management.</p>
+                        <div class="flex gap-3 mt-4">
+                            <a href="#" class="text-xs text-[#38BDF8] hover:text-white transition-colors">Live Demo <i class="fas fa-arrow-right ml-1"></i></a>
+                            <a href="#" class="text-xs text-[#94A3B8] hover:text-white transition-colors"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 - Construction -->
+                <div data-aos="fade-up" data-aos-delay="300" class="portfolio-item group relative rounded-2xl overflow-hidden bg-[#1E293B] border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300" data-category="construction">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1E293B/2563EB?text=Build+Right" alt="Build Right" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-3 left-3 px-3 py-1 bg-[#2563EB]/80 text-white text-xs font-semibold rounded-full">Construction</div>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-semibold text-white">Build Right</h4>
+                        <p class="text-sm text-[#94A3B8] mt-1">Construction portfolio with project gallery.</p>
+                        <div class="flex gap-3 mt-4">
+                            <a href="#" class="text-xs text-[#38BDF8] hover:text-white transition-colors">Live Demo <i class="fas fa-arrow-right ml-1"></i></a>
+                            <a href="#" class="text-xs text-[#94A3B8] hover:text-white transition-colors"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 - Healthcare -->
+                <div data-aos="fade-up" data-aos-delay="400" class="portfolio-item group relative rounded-2xl overflow-hidden bg-[#1E293B] border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300" data-category="healthcare">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1E293B/2563EB?text=Health+Care" alt="Health Care" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-3 left-3 px-3 py-1 bg-[#2563EB]/80 text-white text-xs font-semibold rounded-full">Healthcare</div>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-semibold text-white">Health Care</h4>
+                        <p class="text-sm text-[#94A3B8] mt-1">Patient portal with appointment scheduling.</p>
+                        <div class="flex gap-3 mt-4">
+                            <a href="#" class="text-xs text-[#38BDF8] hover:text-white transition-colors">Live Demo <i class="fas fa-arrow-right ml-1"></i></a>
+                            <a href="#" class="text-xs text-[#94A3B8] hover:text-white transition-colors"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 - Education -->
+                <div data-aos="fade-up" data-aos-delay="500" class="portfolio-item group relative rounded-2xl overflow-hidden bg-[#1E293B] border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300" data-category="education">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://placehold.co/600x400/1E293B/2563EB?text=Learn+Hub" alt="Learn Hub" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-3 left-3 px-3 py-1 bg-[#2563EB]/80 text-white text-xs font-semibold rounded-full">Education</div>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-semibold text-white">Learn Hub</h4>
+                        <p class="text-sm text-[#94A3B8] mt-1">Online learning platform with video courses.</p>
+                        <div class="flex gap-3 mt-4">
+                            <a href="#" class="text-xs text-[#38BDF8] hover:text-white transition-colors">Live Demo <i class="fas fa-arrow-right ml-1"></i></a>
+                            <a href="#" class="text-xs text-[#94A3B8] hover:text-white transition-colors"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    WHY CHOOSE ME
+    ============================================================ -->
+    <section id="why-choose" class="py-20 md:py-28 bg-[#0F172A] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-[#38BDF8] text-sm font-semibold tracking-widest uppercase">Why Choose Me</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">What Sets Me Apart</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-[#2563EB] to-[#38BDF8] mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div data-aos="zoom-in" data-aos-delay="0" class="feature-card p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300 hover:-translate-y-2 text-center">
+                    <div class="w-14 h-14 rounded-full bg-[#2563EB]/20 flex items-center justify-center text-[#38BDF8] text-2xl mx-auto mb-4">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white">Fast Delivery</h4>
+                    <p class="mt-2 text-sm text-[#94A3B8]">I deliver high-quality websites on time, every time.</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="100" class="feature-card p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300 hover:-translate-y-2 text-center">
+                    <div class="w-14 h-14 rounded-full bg-[#2563EB]/20 flex items-center justify-center text-[#38BDF8] text-2xl mx-auto mb-4">
+                        <i class="fas fa-indian-rupee-sign"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white">Affordable</h4>
+                    <p class="mt-2 text-sm text-[#94A3B8]">Premium quality at prices that won't break your budget.</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200" class="feature-card p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300 hover:-translate-y-2 text-center">
+                    <div class="w-14 h-14 rounded-full bg-[#2563EB]/20 flex items-center justify-center text-[#38BDF8] text-2xl mx-auto mb-4">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white">SEO Friendly</h4>
+                    <p class="mt-2 text-sm text-[#94A3B8]">Every site is built with SEO best practices from the ground up.</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="300" class="feature-card p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300 hover:-translate-y-2 text-center">
+                    <div class="w-14 h-14 rounded-full bg-[#2563EB]/20 flex items-center justify-center text-[#38BDF8] text-2xl mx-auto mb-4">
+                        <i class="fas fa-mobile-screen-button"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white">Responsive</h4>
+                    <p class="mt-2 text-sm text-[#94A3B8]">Flawless performance on all devices — mobile, tablet, desktop.</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="400" class="feature-card p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300 hover:-translate-y-2 text-center">
+                    <div class="w-14 h-14 rounded-full bg-[#2563EB]/20 flex items-center justify-center text-[#38BDF8] text-2xl mx-auto mb-4">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white">Secure</h4>
+                    <p class="mt-2 text-sm text-[#94A3B8]">Security-first development to protect your data and users.</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="500" class="feature-card p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300 hover:-translate-y-2 text-center">
+                    <div class="w-14 h-14 rounded-full bg-[#2563EB]/20 flex items-center justify-center text-[#38BDF8] text-2xl mx-auto mb-4">
+                        <i class="fas fa-pen-ruler"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white">Modern Design</h4>
+                    <p class="mt-2 text-sm text-[#94A3B8]">Clean, modern, and user-centric designs that impress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    PROCESS
+    ============================================================ -->
+    <section id="process" class="py-20 md:py-28 bg-[#0F172A] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-[#38BDF8] text-sm font-semibold tracking-widest uppercase">Process</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">How I Work</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-[#2563EB] to-[#38BDF8] mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Timeline line (vertical) -->
+                <div class="absolute left-5 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#2563EB] to-[#38BDF8] transform -translate-x-1/2 hidden sm:block"></div>
+
+                <div class="space-y-12">
+                    <!-- Step 1 -->
+                    <div data-aos="fade-right" class="relative flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#2563EB] flex items-center justify-center text-white font-bold text-sm z-10 shadow-lg shadow-[#2563EB]/30">1</div>
+                        <div class="sm:w-1/2 sm:text-right">
+                            <h4 class="text-lg font-semibold text-white">Discussion</h4>
+                            <p class="text-sm text-[#94A3B8]">We talk about your goals, vision, and requirements.</p>
+                        </div>
+                        <div class="hidden sm:block sm:w-1/2"></div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div data-aos="fade-left" class="relative flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:flex-row-reverse">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#2563EB] flex items-center justify-center text-white font-bold text-sm z-10 shadow-lg shadow-[#2563EB]/30">2</div>
+                        <div class="sm:w-1/2">
+                            <h4 class="text-lg font-semibold text-white">Planning</h4>
+                            <p class="text-sm text-[#94A3B8]">I create a detailed plan and timeline for your project.</p>
+                        </div>
+                        <div class="hidden sm:block sm:w-1/2"></div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div data-aos="fade-right" class="relative flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#2563EB] flex items-center justify-center text-white font-bold text-sm z-10 shadow-lg shadow-[#2563EB]/30">3</div>
+                        <div class="sm:w-1/2 sm:text-right">
+                            <h4 class="text-lg font-semibold text-white">Design</h4>
+                            <p class="text-sm text-[#94A3B8]">I design a modern, user-friendly interface for your brand.</p>
+                        </div>
+                        <div class="hidden sm:block sm:w-1/2"></div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div data-aos="fade-left" class="relative flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:flex-row-reverse">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#2563EB] flex items-center justify-center text-white font-bold text-sm z-10 shadow-lg shadow-[#2563EB]/30">4</div>
+                        <div class="sm:w-1/2">
+                            <h4 class="text-lg font-semibold text-white">Development</h4>
+                            <p class="text-sm text-[#94A3B8]">I build your website with clean, optimized code.</p>
+                        </div>
+                        <div class="hidden sm:block sm:w-1/2"></div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div data-aos="fade-right" class="relative flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#2563EB] flex items-center justify-center text-white font-bold text-sm z-10 shadow-lg shadow-[#2563EB]/30">5</div>
+                        <div class="sm:w-1/2 sm:text-right">
+                            <h4 class="text-lg font-semibold text-white">Testing</h4>
+                            <p class="text-sm text-[#94A3B8]">I thoroughly test for performance, security, and usability.</p>
+                        </div>
+                        <div class="hidden sm:block sm:w-1/2"></div>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div data-aos="fade-left" class="relative flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:flex-row-reverse">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#2563EB] flex items-center justify-center text-white font-bold text-sm z-10 shadow-lg shadow-[#2563EB]/30">6</div>
+                        <div class="sm:w-1/2">
+                            <h4 class="text-lg font-semibold text-white">Launch</h4>
+                            <p class="text-sm text-[#94A3B8]">Your site goes live with full support and training.</p>
+                        </div>
+                        <div class="hidden sm:block sm:w-1/2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    TESTIMONIALS
+    ============================================================ -->
+    <section id="testimonials" class="py-20 md:py-28 bg-[#0F172A] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-[#38BDF8] text-sm font-semibold tracking-widest uppercase">Testimonials</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">What Clients Say</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-[#2563EB] to-[#38BDF8] mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div data-aos="fade-up" data-aos-delay="0" class="p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300">
+                    <div class="flex items-center gap-4">
+                        <img src="https://placehold.co/60x60/1E293B/2563EB?text=JD" alt="John" class="w-12 h-12 rounded-full object-cover border-2 border-[#2563EB]/30" loading="lazy" />
+                        <div>
+                            <h4 class="text-white font-semibold">John Doe</h4>
+                            <p class="text-xs text-[#94A3B8]">CEO, TechStart</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 text-sm mt-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="mt-3 text-sm text-[#94A3B8] leading-relaxed">"Ganesh built a stunning website for our business. Our leads increased by 200% within a month!"</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300">
+                    <div class="flex items-center gap-4">
+                        <img src="https://placehold.co/60x60/1E293B/2563EB?text=SR" alt="Sarah" class="w-12 h-12 rounded-full object-cover border-2 border-[#2563EB]/30" loading="lazy" />
+                        <div>
+                            <h4 class="text-white font-semibold">Sarah Reddy</h4>
+                            <p class="text-xs text-[#94A3B8]">Founder, OrganicEats</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 text-sm mt-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="mt-3 text-sm text-[#94A3B8] leading-relaxed">"The SEO work Ganesh did brought us to page one on Google. We've never been busier!"</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300">
+                    <div class="flex items-center gap-4">
+                        <img src="https://placehold.co/60x60/1E293B/2563EB?text=MK" alt="Mike" class="w-12 h-12 rounded-full object-cover border-2 border-[#2563EB]/30" loading="lazy" />
+                        <div>
+                            <h4 class="text-white font-semibold">Mike Kumar</h4>
+                            <p class="text-xs text-[#94A3B8]">Owner, Grand Hotel</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 text-sm mt-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="mt-3 text-sm text-[#94A3B8] leading-relaxed">"Our hotel website now ranks #1 locally. Bookings have doubled since Ganesh took over."</p>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div data-aos="fade-up" data-aos-delay="300" class="p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300">
+                    <div class="flex items-center gap-4">
+                        <img src="https://placehold.co/60x60/1E293B/2563EB?text=AL" alt="Anita" class="w-12 h-12 rounded-full object-cover border-2 border-[#2563EB]/30" loading="lazy" />
+                        <div>
+                            <h4 class="text-white font-semibold">Anita Lakshmi</h4>
+                            <p class="text-xs text-[#94A3B8]">Director, HealthPlus</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 text-sm mt-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="mt-3 text-sm text-[#94A3B8] leading-relaxed">"Ganesh redesigned our healthcare site. Patients love the new booking system!"</p>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div data-aos="fade-up" data-aos-delay="400" class="p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300">
+                    <div class="flex items-center gap-4">
+                        <img src="https://placehold.co/60x60/1E293B/2563EB?text=RJ" alt="Raj" class="w-12 h-12 rounded-full object-cover border-2 border-[#2563EB]/30" loading="lazy" />
+                        <div>
+                            <h4 class="text-white font-semibold">Raj Jaiswal</h4>
+                            <p class="text-xs text-[#94A3B8]">Founder, BuildRight</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 text-sm mt-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="mt-3 text-sm text-[#94A3B8] leading-relaxed">"The construction portfolio Ganesh built is incredible. We get compliments daily."</p>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div data-aos="fade-up" data-aos-delay="500" class="p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 hover:border-[#2563EB]/40 transition-all duration-300">
+                    <div class="flex items-center gap-4">
+                        <img src="https://placehold.co/60x60/1E293B/2563EB?text=PM" alt="Priya" class="w-12 h-12 rounded-full object-cover border-2 border-[#2563EB]/30" loading="lazy" />
+                        <div>
+                            <h4 class="text-white font-semibold">Priya Mehta</h4>
+                            <p class="text-xs text-[#94A3B8]">Owner, LearnHub</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 text-sm mt-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="mt-3 text-sm text-[#94A3B8] leading-relaxed">"Ganesh is a true professional. Our education platform has never been better."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    PRICING
+    ============================================================ -->
+    <section id="pricing" class="py-20 md:py-28 bg-[#0F172A] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-[#38BDF8] text-sm font-semibold tracking-widest uppercase">Pricing</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Simple, Transparent Pricing</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-[#2563EB] to-[#38BDF8] mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-[#94A3B8] max-w-2xl mx-auto">Choose the plan that fits your business needs. All plans include premium features.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- Basic -->
+                <div data-aos="fade-up" data-aos-delay="0" class="p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:border-[#2563EB]/40">
+                    <h4 class="text-lg font-semibold text-white">Basic</h4>
+                    <div class="mt-2 flex items-baseline gap-1">
+                        <span class="text-3xl font-bold text-white">₹9,999</span>
+                        <span class="text-sm text-[#94A3B8]">/ project</span>
+                    </div>
+                    <ul class="mt-6 space-y-3 text-sm text-[#94A3B8]">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[#38BDF8]"></i> 5 Pages Website</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[#38BDF8]"></i> Responsive Design</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[#38BDF8]"></i> SEO Basics</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[#38BDF8]"></i> Contact Form</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[#38BDF8]"></i> 1 Month Support</li>
+                    </ul>
+                    <a href="#contact" class="mt-8 block text-center px-6 py-3 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-full transition-all border border-white/10">Get Started</a>
+                </div>
+
+                <!-- Standard (Recommended) -->
+                <div data-aos="fade-up" data-aos-delay="100" class="p-6 rounded-2xl bg-gradient-to-b from-[#2563EB]/20 to-[#1E293B]/50 backdrop-blur-sm border-2 border-[#2563EB] transition-all duration-300 hover:-translate-y-2 relative">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#2563EB] text-white text-xs font-semibold rounded-full">Recommended</div>
+                    <h4 class="text-lg font-semibold text-white">Standard</h4>
+                    <div class="mt-2 flex items-baseline gap-1">
+                        <span class="text-3xl font-bold text-white">₹24,999</span>
+                        <span class="text-sm text-[#94A3B8]">/ project</span>
+                    </div>
+                    <ul class="mt-6 space-y-3 text-sm text-[#94A3B8]">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[#38BDF8]"></i> 10 Pages Website</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[#38BDF8]"></i> Responsive + Mobile First</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[#38BDF8]"></i> Advanced SEO Setup</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[#38BDF8]"></i> Google Business Profile</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[#38BDF8]"></i> 3 Months Support</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[#38BDF8]"></i> Speed Optimization</li>
+                    </ul>
+                    <a href="#contact" class="mt-8 block text-center px-6 py-3 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-semibold rounded-full transition-all shadow-lg shadow-[#2563EB]/30">Get Started</a>
+                </div>
+
+                <!-- Premium -->
+                <div data-aos="fade-up" data-aos-delay="200" class="p-6 rounded-2xl bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:border-[#2563EB]/40">
+                    <h4 class="text-lg font-semibold text-white">Premium</h4>
+                    <div class="mt-2 flex items-baseline gap-1">
+                        <span class="text-3xl font-bold text-white">₹49,999</span>
+                        <span class="text-sm text-[#94A3B8]">/ project</span>
+                    </div>
+                    <ul class="mt-6 space-y-3 text-sm text-[#94A3B8]">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[#38BDF8]"></i> 20+ Pages Website</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[#38BDF8]"></i> Custom Design + Development</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[#38BDF8]"></i> Full SEO + Digital Marketing</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[#38BDF8]"></i> Google Business Profile Pro</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[#38BDF8]"></i> 12 Months Support</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[#38BDF8]"></i> Ongoing Maintenance</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[#38BDF8]"></i> Priority Support</li>
+                    </ul>
+                    <a href="#contact" class="mt-8 block text-center px-6 py-3 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-full transition-all border border-white/10">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FAQ
+    ============================================================ -->
+    <section id="faq" class="py-20 md:py-28 bg-[#0F172A] relative">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-[#38BDF8] text-sm font-semibold tracking-widest uppercase">FAQ</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Frequently Asked Questions</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-[#2563EB] to-[#38BDF8] mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="space-y-4" id="faq-container">
+                <!-- FAQ 1 -->
+                <div data-aos="fade-up" class="faq-item bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left text-white font-medium hover:bg-white/5 transition-colors">
+                        <span>How long does it take to build a website?</span>
+                        <i class="fas fa-chevron-down text-[#94A3B8] transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-5 pt-0 text-sm text-[#94A3B8] leading-relaxed">Typically, a standard website takes 2-4 weeks, depending on complexity. I'll provide a clear timeline during our initial discussion.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div data-aos="fade-up" data-aos-delay="50" class="faq-item bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left text-white font-medium hover:bg-white/5 transition-colors">
+                        <span>Do you offer ongoing maintenance?</span>
+                        <i class="fas fa-chevron-down text-[#94A3B8] transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-5 pt-0 text-sm text-[#94A3B8] leading-relaxed">Yes! I offer maintenance packages to keep your site secure, updated, and performing at its best.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div data-aos="fade-up" data-aos-delay="100" class="faq-item bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left text-white font-medium hover:bg-white/5 transition-colors">
+                        <span>Will my website be mobile-friendly?</span>
+                        <i class="fas fa-chevron-down text-[#94A3B8] transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-5 pt-0 text-sm text-[#94A3B8] leading-relaxed">Absolutely. Every site I build is fully responsive and looks great on all devices — mobile, tablet, and desktop.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div data-aos="fade-up" data-aos-delay="150" class="faq-item bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left text-white font-medium hover:bg-white/5 transition-colors">
+                        <span>Do you help with SEO and Google Business Profile?</span>
+                        <i class="fas fa-chevron-down text-[#94A3B8] transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-5 pt-0 text-sm text-[#94A3B8] leading-relaxed">Yes! I provide comprehensive SEO services and Google Business Profile optimization to help you rank higher and attract more customers.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div data-aos="fade-up" data-aos-delay="200" class="faq-item bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left text-white font-medium hover:bg-white/5 transition-colors">
+                        <span>What if I need changes after launch?</span>
+                        <i class="fas fa-chevron-down text-[#94A3B8] transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-5 pt-0 text-sm text-[#94A3B8] leading-relaxed">I offer post-launch support and can make changes as your business evolves. Maintenance plans are available.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div data-aos="fade-up" data-aos-delay="250" class="faq-item bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left text-white font-medium hover:bg-white/5 transition-colors">
+                        <span>Do you provide hosting?</span>
+                        <i class="fas fa-chevron-down text-[#94A3B8] transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-5 pt-0 text-sm text-[#94A3B8] leading-relaxed">I can recommend reliable hosting providers and help you set everything up. I don't provide hosting directly but can guide you through the process.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div data-aos="fade-up" data-aos-delay="300" class="faq-item bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left text-white font-medium hover:bg-white/5 transition-colors">
+                        <span>What payment methods do you accept?</span>
+                        <i class="fas fa-chevron-down text-[#94A3B8] transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-5 pt-0 text-sm text-[#94A3B8] leading-relaxed">I accept bank transfers, UPI, and PayPal. Payment terms are flexible and discussed during the project onboarding.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 8 -->
+                <div data-aos="fade-up" data-aos-delay="350" class="faq-item bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left text-white font-medium hover:bg-white/5 transition-colors">
+                        <span>Can you redesign my existing website?</span>
+                        <i class="fas fa-chevron-down text-[#94A3B8] transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-5 pt-0 text-sm text-[#94A3B8] leading-relaxed">Definitely! I specialize in redesigns that modernize your brand and improve user experience while preserving your content.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 9 -->
+                <div data-aos="fade-up" data-aos-delay="400" class="faq-item bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left text-white font-medium hover:bg-white/5 transition-colors">
+                        <span>Do you offer digital marketing services?</span>
+                        <i class="fas fa-chevron-down text-[#94A3B8] transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-5 pt-0 text-sm text-[#94A3B8] leading-relaxed">Yes! I offer digital marketing services including social media management, content marketing, and paid ads management.</div>
+                    </div>
+                </div>
+
+                <!-- FAQ 10 -->
+                <div data-aos="fade-up" data-aos-delay="450" class="faq-item bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left text-white font-medium hover:bg-white/5 transition-colors">
+                        <span>How do I get started?</span>
+                        <i class="fas fa-chevron-down text-[#94A3B8] transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-5 pt-0 text-sm text-[#94A3B8] leading-relaxed">Simply fill out the contact form or click 'Get Free Quote'. I'll reach out within 24 hours to schedule a discussion about your project.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    DONATION SECTION
+    ============================================================ -->
+    <section id="donation" class="py-20 md:py-28 bg-[#0F172A] relative">
+        <div class="absolute inset-0 bg-[#2563EB]/5 blur-3xl"></div>
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="fade-up">
+            <div class="text-5xl mb-4">❤️</div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white">Support My Work</h2>
+            <p class="mt-4 text-lg text-[#94A3B8]">If my work helps you, you can support me with a donation.</p>
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <a href="#" class="px-8 py-3.5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-semibold rounded-full transition-all shadow-lg shadow-[#2563EB]/30 flex items-center gap-2">
+                    <i class="fas fa-phone"></i> Donate via UPI
+                </a>
+                <a href="#" class="px-8 py-3.5 bg-[#FF813F] hover:bg-[#E6732E] text-white font-semibold rounded-full transition-all shadow-lg shadow-[#FF813F]/30 flex items-center gap-2">
+                    <i class="fas fa-mug-saucer"></i> Buy Me a Coffee
+                </a>
+                <a href="#" class="px-8 py-3.5 bg-[#0070BA] hover:bg-[#005A9C] text-white font-semibold rounded-full transition-all shadow-lg shadow-[#0070BA]/30 flex items-center gap-2">
+                    <i class="fab fa-paypal"></i> PayPal
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CONTACT SECTION
+    ============================================================ -->
+    <section id="contact" class="py-20 md:py-28 bg-[#0F172A] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-[#38BDF8] text-sm font-semibold tracking-widest uppercase">Contact</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Let's Work Together</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-[#2563EB] to-[#38BDF8] mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-[#94A3B8] max-w-2xl mx-auto">Have a project in mind? Reach out and let's make something amazing.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Form -->
+                <div data-aos="fade-right" class="bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 rounded-2xl p-6 md:p-8">
+                    <form id="contact-form" class="space-y-5">
+                        <div>
+                            <label class="block text-sm font-medium text-[#94A3B8] mb-1">Full Name</label>
+                            <input type="text" name="name" required placeholder="Your name" class="w-full px-4 py-3 bg-[#0F172A] border border-white/10 rounded-xl text-white placeholder-[#64748B] focus:outline-none focus:border-[#2563EB] transition-colors" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-[#94A3B8] mb-1">Email Address</label>
+                            <input type="email" name="email" required placeholder="you@example.com" class="w-full px-4 py-3 bg-[#0F172A] border border-white/10 rounded-xl text-white placeholder-[#64748B] focus:outline-none focus:border-[#2563EB] transition-colors" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-[#94A3B8] mb-1">Phone Number</label>
+                            <input type="tel" name="phone" placeholder="+91 98765 43210" class="w-full px-4 py-3 bg-[#0F172A] border border-white/10 rounded-xl text-white placeholder-[#64748B] focus:outline-none focus:border-[#2563EB] transition-colors" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-[#94A3B8] mb-1">Business Name</label>
+                            <input type="text" name="business" placeholder="Your business name" class="w-full px-4 py-3 bg-[#0F172A] border border-white/10 rounded-xl text-white placeholder-[#64748B] focus:outline-none focus:border-[#2563EB] transition-colors" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-[#94A3B8] mb-1">Message</label>
+                            <textarea name="message" rows="4" required placeholder="Tell me about your project..." class="w-full px-4 py-3 bg-[#0F172A] border border-white/10 rounded-xl text-white placeholder-[#64748B] focus:outline-none focus:border-[#2563EB] transition-colors resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-semibold rounded-xl transition-all shadow-lg shadow-[#2563EB]/30 flex items-center justify-center gap-2">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                    <div class="mt-6 flex flex-wrap gap-4 justify-center">
+                        <a href="https://wa.me/919876543210" target="_blank" class="flex items-center gap-2 px-5 py-2 bg-[#25D366]/20 text-[#25D366] hover:bg-[#25D366]/30 rounded-full text-sm font-medium transition-all border border-[#25D366]/30">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="mailto:ganesh@ganeshweb.dev" class="flex items-center gap-2 px-5 py-2 bg-[#2563EB]/20 text-[#38BDF8] hover:bg-[#2563EB]/30 rounded-full text-sm font-medium transition-all border border-[#2563EB]/30">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Info + Map -->
+                <div data-aos="fade-left" class="space-y-6">
+                    <div class="bg-[#1E293B]/50 backdrop-blur-sm border border-white/5 rounded-2xl p-6">
+                        <h4 class="text-lg font-semibold text-white">Get in Touch</h4>
+                        <p class="mt-2 text-sm text-[#94A3B8]">I'm always available to discuss new projects and opportunities.</p>
+                        <div class="mt-4 space-y-3 text-sm">
+                            <div class="flex items-center gap-3 text-[#94A3B8]"><i class="fas fa-envelope text-[#38BDF8] w-5"></i> ganesh@ganeshweb.dev</div>
+                            <div class="flex items-center gap-3 text-[#94A3B8]"><i class="fas fa-phone text-[#38BDF8] w-5"></i> +91 98765 43210</div>
+                            <div class="flex items-center gap-3 text-[#94A3B8]"><i class="fas fa-location-dot text-[#38BDF8] w-5"></i> India</div>
+                        </div>
+                    </div>
+
+                    <!-- Google Maps placeholder -->
+                    <div class="rounded-2xl overflow-hidden border border-white/5 h-64 bg-[#1E293B] relative">
+                        <div class="w-full h-full flex items-center justify-center text-[#94A3B8] flex-col gap-2">
+                            <i class="fas fa-map-location-dot text-4xl text-[#2563EB]/50"></i>
+                            <span class="text-sm">Google Maps — India</span>
+                            <span class="text-xs text-[#64748B]">📍 Location placeholder</span>
+                        </div>
+                        <!-- If you have a real API key, replace the div above with an iframe -->
+                        <!-- <iframe src="https://www.google.com/maps/embed?..." class="w-full h-full" allowfullscreen loading="lazy"></iframe> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="bg-[#0F172A] border-t border-white/5 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div>
+                    <a href="#" class="flex items-center gap-2 text-xl font-bold text-white">
+                        <span>🚀</span> Ganesh<span class="text-[#2563EB]">.</span>
+                    </a>
+                    <p class="mt-3 text-sm text-[#94A3B8] leading-relaxed">Professional websites, SEO, and digital marketing to grow your business online.</p>
+                    <div class="mt-4 flex gap-3">
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/5 hover:bg-[#2563EB]/20 text-[#94A3B8] hover:text-[#38BDF8] flex items-center justify-center transition-all"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/5 hover:bg-[#2563EB]/20 text-[#94A3B8] hover:text-[#38BDF8] flex items-center justify-center transition-all"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/5 hover:bg-[#2563EB]/20 text-[#94A3B8] hover:text-[#38BDF8] flex items-center justify-center transition-all"><i class="fab fa-github"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/5 hover:bg-[#2563EB]/20 text-[#94A3B8] hover:text-[#38BDF8] flex items-center justify-center transition-all"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h5 class="text-white font-semibold mb-4">Quick Links</h5>
+                    <ul class="space-y-2 text-sm text-[#94A3B8]">
+                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h5 class="text-white font-semibold mb-4">Services</h5>
+                    <ul class="space-y-2 text-sm text-[#94A3B8]">
+                        <li><a href="#services" class="hover:text-white transition-colors">Website Design</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">SEO Optimization</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Digital Marketing</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">GBP Optimization</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Maintenance</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h5 class="text-white font-semibold mb-4">Legal</h5>
+                    <ul class="space-y-2 text-sm text-[#94A3B8]">
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-[#64748B]">
+                <p>&copy; 2026 Ganesh. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart text-[#2563EB]"></i> in India</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    BACK TO TOP BUTTON
+    ============================================================ -->
+    <button id="back-top" class="fixed bottom-6 right-6 z-30 w-12 h-12 rounded-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white shadow-lg shadow-[#2563EB]/40 transition-all opacity-0 invisible translate-y-4 flex items-center justify-center text-lg">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================================
+    SCRIPTS
+    ============================================================ -->
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+    <!-- Custom JS -->
+    <script src="script.js">
+    </script>
+</body>
+</html>
